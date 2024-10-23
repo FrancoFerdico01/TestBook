@@ -48,6 +48,6 @@ const logValidate = (e) => {
 logForm.addEventListener("submit", (e) => {
   logValidate(e);
   hasError = true;
-  logEmail.value = ''
-  logPass.value = ''
+  logEmail.value = "";
+  logPass.value = "";
 });

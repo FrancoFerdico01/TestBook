@@ -13,7 +13,7 @@ const info = () => {
     const users = JSON.parse(userInfo);
     profileNAme.innerHTML = `${users[0].firstName} ${users[0].lastName}`;
     users.forEach((user) => {
-      ul.innerHTML = `<li> Età: ${user.age} anni </Li>  <li>Email: ${user.email}</li>`;
+      ul.innerHTML = `<li> Età: ${user.age} anni </li>  <li>Email: ${user.email}</li>`;
     });
   }
 };
@@ -36,11 +36,10 @@ window.onclick = function (event) {
   }
 };
 
-let hasError = false;
-
 const changeData = (e) => {
   e.preventDefault();
-  const data = JSON.parse(userInfo) || [];
+  const imageUpdate = localStorage.getItem('currentUser')
+  const data = JSON.parse(imageUpdate) || [];
   const formChangeData = new FormData(form);
   const getFormChangeData = Object.fromEntries(formChangeData);
 
@@ -48,53 +47,37 @@ const changeData = (e) => {
     firstName: getFormChangeData.Nome,
     lastName: getFormChangeData.Cognome,
     age: getFormChangeData.Età,
+    image: data[0].image || '',
     email: getFormChangeData.Email,
     password: getFormChangeData.Password,
   };
 
-  const index = data.findIndex((obj) => obj[0]?.email === updatedData.Email);
-  const findRegisteredUser = userParse.findIndex(
-    (obj) => obj?.email === data[0].email
-  );
-
-  if (index !== -1) {
-    data[index] = updatedData;
-    userParse[findRegisteredUser] = updatedData;
-    localStorage.setItem("currentUser", JSON.stringify(data));
-    localStorage.setItem("userData", JSON.stringify(userParse));
-  }
-
-  hasError = false;
+  let hasError = false;
 
   if (getFormChangeData.Età < 18) {
     hasError = true;
     error.innerHTML =
       "<h2>Non hai l'età minima</h2> <p> Non sei maggiorenne!</p> <button id='error-btn'>X</button>";
-    ("flex");
     error.className = "active";
   } else if (getFormChangeData.Password.length < 8) {
     hasError = true;
     error.innerHTML =
       "<h2>Password troppo corta!</h2> <p>La password non deve contenere meno di 8 caratteri!</p> <button id='error-btn'>X</button>";
-    ("flex");
     error.className = "active";
   } else if (!getFormChangeData.Email.includes("@")) {
     hasError = true;
     error.innerHTML =
       "<h2>Email errata!</h2> <p>L'email deve contenere la '@'!</p> <button id='error-btn'>X</button>";
-    ("flex");
     error.className = "active";
   } else if (getFormChangeData.Nome === "") {
     hasError = true;
     error.innerHTML =
       "<h2>Nome non inserito!</h2> <button id='error-btn'>X</button>";
-    ("flex");
     error.className = "active";
   } else if (getFormChangeData.Cognome === "") {
     hasError = true;
     error.innerHTML =
       "<h2>Cognome non inserito!</h2> <button id='error-btn'>X</button>";
-    ("flex");
     error.className = "active";
   }
 
@@ -107,6 +90,20 @@ const changeData = (e) => {
     error.innerHTML =
       "<h2>E-mail non valida</h2> <p> Questa E-mail è già esistente!</p> <button id='error-btn'>X</button>";
     error.className = "active";
+  }
+
+  const index = data.findIndex((obj) => obj[0]?.email === updatedData.Email);
+  const findRegisteredUser = userParse.findIndex(
+    (obj) => obj?.email === data[0].email
+  );
+
+  if (!hasError && index !== -1) {
+    data[index] = updatedData;
+    userParse[findRegisteredUser] = updatedData;
+    localStorage.setItem("currentUser", JSON.stringify(data));
+    localStorage.setItem("userData", JSON.stringify(userParse));
+
+    location.reload();
   }
 
   if (hasError) {

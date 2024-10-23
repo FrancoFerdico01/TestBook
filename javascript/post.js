@@ -16,7 +16,6 @@ postForm.addEventListener("submit", function (event) {
     post.textContent = postContent;
     post.classList.add("text");
     postList.classList.add("container");
-    
 
     postList.appendChild(postElement);
     postElement.appendChild(postTitle);
