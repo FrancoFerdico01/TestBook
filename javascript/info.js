@@ -38,7 +38,7 @@ window.onclick = function (event) {
 
 const changeData = (e) => {
   e.preventDefault();
-  const imageUpdate = localStorage.getItem('currentUser')
+  const imageUpdate = localStorage.getItem("currentUser");
   const data = JSON.parse(imageUpdate) || [];
   const formChangeData = new FormData(form);
   const getFormChangeData = Object.fromEntries(formChangeData);
@@ -47,7 +47,7 @@ const changeData = (e) => {
     firstName: getFormChangeData.Nome,
     lastName: getFormChangeData.Cognome,
     age: getFormChangeData.Età,
-    image: data[0].image || '',
+    image: data[0].image || "",
     email: getFormChangeData.Email,
     password: getFormChangeData.Password,
   };
@@ -120,9 +120,6 @@ const removeError = () => {
 
 form.addEventListener("submit", (e) => {
   changeData(e);
-  if (!hasError) {
-    location.reload();
-  }
 });
 
 info();
