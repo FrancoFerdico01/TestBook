@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TestBook</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="css/Profile/header.css" />
+    <link rel="stylesheet" href="css/Profile/post.css" />
+    <link rel="stylesheet" href="css/Profile/imgModal.css" />
+  </head>
+  <body>
+    <script type="module" src="javascript/info.js"></script>
+    <script type="module" src="javascript/post.js"></script>
+    <script type="module" src="javascript/logout.js"></script>
+    <script type="module" src="javascript/delete.js"></script>
+    <script type="module" src="javascript/img-profile.js"></script>
+    <header class="header">
+      <nav>
+        <h1>TestBook</h1>
+        <div class="nav-buttons">
+          <button id="openModal">Modifica profilo</button>
+          <button id="logout">Logout</button>
+        </div>
+      </nav>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <h2>Modifica qui il tuo profilo!</h2>
+          <form id="form" class="form">
+            <div id="set-error"></div>
+            <label for="Nome">Nome</label>
+            <input type="text" id="Nome" name="Nome" />
+            <label for="Cognome">Cognome</label>
+            <input type="text" id="Cognome" name="Cognome" />
+            <label for="Età">Età</label>
+            <input type="text" id="Età" name="Età" />
+            <label for="E-mail">E-mail</label>
+            <input type="text" id="E-mail" name="Email" />
+            <label for="Password">Password</label>
+            <input type="text" id="Password" name="Password" />
+            <button type="submit">Modifica</button>
+            <span class="close">Esci</span>
+          </form>
+          <button class="btnDelete"  id="delete">Elimina Account</button>
+        </div>
+      </div>
+
+      <div id="modalImg" class="imgModal">
+         <div class="modal-container">
+        <h2>Scegli una nuova immagine del profilo!</h2>
+       <div id="img-content" class="img-container">
+          <img id='img1' class="image-profile" src="./assets/profilo.jpg" alt="" />
+          <img id='img2' class="image-profile" src="./assets/profilo1.jpg" alt="" />
+          <img id='img3' class="image-profile" src="./assets/profilo2.jpg" alt="" />
+          <img id='img4' class="image-profile" src="./assets/profilo3.jpg" alt="" />
+        </div>
+        <button id="btnExit">Esci</button>
+      </div>
+      </div>
+
+      <div class="img-profile">
+        <img
+          id="profile-image"
+           class="icon"
+          alt=""
+        />
+        <h2 id="name" class="profileName"></h2>
+        <ul id="infoUl"></ul>
+      </div>
+    </header>
+    <div class="myForm">
+      <h1>A cosa stai pensando?</h1>
+      <form id="postForm" class="myFormContent">
+        <textarea
+          class="postContent"
+          id="postContent"
+          rows="4"
+          cols="50"
+          placeholder="Scrivi il tuo post..."
+          required
+        ></textarea
+        ><br />
+        <button type="submit">Pubblica</button>
+      </form>
+    </div>
+
+    <div class="publishedPosts">
+      <h2>Post Pubblicati</h2>
+      <div id="postList"></div>
+    </div>
+  </body>
+</html>

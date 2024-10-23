@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TestBook</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./css/Login/login.css" />
+    
+  </head>
+  <body>
+    <script type="module" src="javascript/validate-login.js"></script>
+    <div class="login">
+      <div class="login-form">
+        <h1>TestBook</h1>
+        <form id="form" class="form">
+          <div id="result"class='log not-log not-active'></div>
+
+          <p>Effettua il login!</p>
+
+          <input
+            type="text"
+            id="logEmail"
+            name="email"
+            placeholder="Inserisci la tua E-mail"
+          />
+          <input
+            type="text"
+            id="logPassword"
+            name="password"
+            placeholder="Inserisci la tua password"
+          />
+          <button type="submit">Accedi</button>
+          <a href="./sign-up.html">Non hai un account? Registrati!</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

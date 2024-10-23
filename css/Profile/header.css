@@ -1,0 +1,173 @@
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+}
+
+header nav {
+  border: 1px solid grey;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  box-shadow: 0px 3px 10px grey;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: white;
+}
+
+header nav h1 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 30px;
+  color: rgb(0, 0, 162);
+  margin-left: 10px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 20px;
+  margin-right: 10px;
+}
+
+.nav-buttons button {
+  cursor: pointer;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  padding: 10px;
+  background-color: rgb(0, 0, 162);
+  color: white;
+  font-size: 15px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+
+}
+
+.icon{
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.img-profile {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  width: 300px;
+  margin-top: 50px;
+  border: 1px solid grey;
+  border-radius: 15px;
+  box-shadow: 0px 3px 10px grey;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  font-size: 20px;
+}
+
+.profileName {
+  text-transform: uppercase;
+  
+}
+
+.form {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form input{
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.form button{
+  padding: 10px;
+  background-color: rgb(0, 0, 123);
+  border:1px solid transparent;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.btnDelete{
+  background-color: transparent;
+  border: none;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: red;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.modal {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  align-items: center;
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  border: 1px solid grey;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #888;
+  
+}
+
+.close {
+  color: #aaa;
+  float: right; 
+  font-size: 20px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.not-active {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.active {
+  border: 1px solid red;
+  background-color: rgba(252, 0, 0, 0.539);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  padding: 10px;
+}

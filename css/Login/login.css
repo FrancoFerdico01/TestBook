@@ -1,0 +1,83 @@
+.login {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  border: 1px solid grey;
+  border-radius: 15px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0px 3px 10px grey;
+}
+
+.login-form h1 {
+  color: rgb(0, 0, 74);
+  font-size: 70px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form input {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.form button {
+  background-color: rgb(0, 0, 74);
+  border: 1px solid transparent;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.log {
+  border: 1px solid green;
+  background-color: rgba(0, 252, 55, 0.539);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  font-size: 12px;
+  padding: 10px;
+}
+
+.not-log{
+  border: 1px solid red;
+  background-color: rgba(252, 0, 0, 0.539);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  font-size: 12px;
+  padding: 10px;
+}
+
+.not-active{
+  border: 1px solid transparent;
+  background-color: transparent;
+}
